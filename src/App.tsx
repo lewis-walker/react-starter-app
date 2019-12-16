@@ -9,7 +9,7 @@ const App: React.FC = () => {
         results.map(
           (result, idx) =>[
             <span key={`title-${idx}`}>{result.title}</span>,
-            <span className="value" key={`value-${idx}`}>{JSON.stringify(result.value)}</span>
+            <span className="value" key={`value-${idx}`}>{result.value}</span>
           ]
         )
       }
