@@ -20,7 +20,13 @@ let age = 47
 addResult('numeric variable', age)
 
 
-let person = {
+type Person = {
+    forename: string
+    surname: string
+    age: number
+}
+
+let person: Person = {
   forename, // shorthand for forename: forename
   surname: 'Walker',
   age // shorthand for age: age
@@ -49,26 +55,30 @@ for (count = 0; count < 5; count += 1) { // shorthand for the above while loop
   addResult('after another birthday', person)
 }
 
-function add5(v: number) { // this function will only accept a number
-  return v + 5
+
+function makeOlder (p: Person, years: number) { // makeOlder is a function which is a pointer to code that CAN run
+    const result = {
+        surname: p.surname,
+        forename: p.forename,
+        age: p.age + years
+    }
+
+    return result
 }
 
-addResult('add5(5)', add5(5))
+let olderPerson = makeOlder(person, 5) // olderPerson takes the value that results from CALLING the function
 
-let add10 = (v: number) => v + 10
+addResult('after calling the function, person = ', person)
+addResult('after calling the function, olderPerson = ', olderPerson)
 
-addResult('add10(5)', add10(5))
+const ageByOneYear = (p: Person) => { // An alternative way of defining a variable pointing to a function / code that can run
+    return {
+        surname: p.surname,
+        forename: p.forename,
+        age: p.age + 1
+    }
+}
 
-let adder = add5
-addResult('adder(5)', adder(5))
+const codeICanRun = ageByOneYear // Now codeICanRun is a variable that points to the same bit of code as ageByOneYear
 
-adder = add10
-addResult('adder(5)', adder(5))
-
-
-
-
-
-
-
-
+codeICanRun(person) // So now we can call that variable as a function, because it is
