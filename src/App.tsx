@@ -4,15 +4,12 @@ import { results } from './experiments'
 
 const App: React.FC = () => {
   return (
-    <div className="results">
-      {
-        results.map(
-          (result, idx) =>[
-            <span key={`title-${idx}`}>{result.title}</span>,
-            <span className="value" key={`value-${idx}`}>{result.value}</span>
-          ]
-        )
-      }
+    <div>
+      <h1>Title</h1>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
     </div>
   );
 }
