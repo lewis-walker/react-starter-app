@@ -1,10 +1,5 @@
-.results {
-  display: grid;
-  width: auto;
-  grid-template-columns: auto 1fr;
-  margin: 1rem;
-}
 
-.value {
-  margin-left: 1rem;
+
+.container {
+
 }
