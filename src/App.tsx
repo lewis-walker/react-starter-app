@@ -24,23 +24,41 @@ const todoList: Array<ToDoItemType> = [
 
 const useStyles = makeStyles({
   toDoRow: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
     '&:hover': {
+      backgroundColor: 'lightblue',
+      cursor: 'pointer',
+      textDecoration: 'underline'
     } as CSSProperties,
+    marginBottom: '3px'
   },
 
   descriptionCol: {
+    flex: 1
   },
 
   dueDateCol: {
+
   },
 
   doneCol: {
+    display: 'flex',
+    alignItems: 'center'
   },
 
   col: {
+    paddingLeft: '0.5em',
+    paddingRight: '0.5em',
+    paddingTop: '0.25em',
+    paddingBottom: '0.25em'
   },
 
   container: {
+    marginLeft: '10vw',
+    marginRight: '10vw',
   },
 
   title: {
